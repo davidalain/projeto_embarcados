@@ -103,12 +103,18 @@ void imprimirTabuleiro(){
         criaCasasAleatorias();
     }else{
 //⬤
-		if(tabuleiro[19][19] == "X " || tabuleiro[19][20] == "X " || tabuleiro[20][19] == "X " || tabuleiro[20][20] == "X "){
+	if(tabuleiro[19][19] == "X " || tabuleiro[19][20] == "X " || tabuleiro[20][19] == "X " || tabuleiro[20][20] == "X "){
             std::string text = "####################\n# JOGADOR X VENCEU #\n####################\n";
             cout << text;
-        }else if(tabuleiro[19][19] == "O " || tabuleiro[19][20] == "O " || tabuleiro[20][19] == "O " || tabuleiro[20][20] == "O "){
+            ThisThread::sleep_for(5000ms);
+            statusMatriz = false;
+            imprimirTabuleiro();
+        }if(tabuleiro[19][19] == "O " || tabuleiro[19][20] == "O " || tabuleiro[20][19] == "O " || tabuleiro[20][20] == "O "){
             std::string text = "####################\n# JOGADOR O VENCEU #\n####################\n";
             cout << text;
+            ThisThread::sleep_for(5000ms);
+            statusMatriz = false;
+            imprimirTabuleiro();
         }else{
 		 std::string text = "";
 		for(int i = 0; i < 40; i++) {
